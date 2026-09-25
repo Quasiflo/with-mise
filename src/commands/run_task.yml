@@ -1,0 +1,66 @@
+---
+description: |
+  This command downloads all necessary mise tools & dependencies and executes your task.
+parameters:
+  # jscpd:ignore-start
+  use_cache:
+    type: boolean
+    default: false
+    description: Cache mise tool dependencies
+  strict_mode:
+    type: boolean
+    default: true
+    description: Runs `mise install --locked`, avoiding implicit dependency changes during resolution
+  use_tools:
+    type: string
+    default: ""
+    description: Comma-separated list of full mise tool IDs to install & activate (as in mise.toml, e.g. "aqua:jdx/hk,node"). All others will be ignored (sets MISE_ENABLE_TOOLS). Mutually exclusive with exclude_tools option.
+  exclude_tools:
+    type: string
+    default: ""
+    description: Comma-separated list of full mise tool IDs to exclude from installation (as in mise.toml, e.g. "aqua:jdx/hk"). All others will be included (sets MISE_DISABLE_TOOLS). Mutually exclusive with use_tools option.
+  commands:
+    type: string
+    description: String of commands to run
+    # jscpd:ignore-end
+steps:
+  - run:
+      name: Set Global Env Vars
+      command: echo "export CI_PLATFORM=circleci" >> "$BASH_ENV"
+  - run:
+      name: Setup CI
+      environment:
+        SCRIPT_SUBCOMMAND: SETUP
+        STRICT_MODE: << parameters.strict_mode >>
+        USE_TOOLS: << parameters.use_tools >>
+        EXCLUDE_TOOLS: << parameters.exclude_tools >>
+      command: <<include(scripts/everything.sh)>>
+  - when:
+      condition: << parameters.use_cache >>
+      steps:
+        - restore_cache:
+            name: Restore Mise Tools Cache
+            keys:
+              - &primaryCacheKey mise-{{ arch }}-{{ checksum "tmp/TOOLS_CHECKSUM.txt" }}-{{ checksum "tmp/FILES_CHECKSUM.txt" }}
+              - mise-{{ arch }}-{{ checksum "tmp/TOOLS_CHECKSUM.txt" }}
+              - mise-{{ arch }}
+  - run:
+      name: Install Tools
+      environment:
+        SCRIPT_SUBCOMMAND: INSTALL_TOOLS
+      command: <<include(scripts/everything.sh)>>
+  - when:
+      condition: << parameters.use_cache >>
+      steps:
+        - save_cache:
+            name: Save Mise Tools Cache
+            key: *primaryCacheKey
+            paths:
+              - ~/.local/share/mise
+  - run:
+      name: Run Task
+      environment:
+        TASK_COMMANDS: << parameters.commands >>
+      command: |
+        eval "$(mise activate bash)"
+        eval "$TASK_COMMANDS"

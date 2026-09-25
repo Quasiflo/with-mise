@@ -1,14 +1,8 @@
 #* Backend Priority Order: Core, Aqua, Github, Package Manager (cargo, npm, pipx)
 
-# [env]
-# INFISICAL_TOKEN = { value = "{% set _env = get_env(name='INFISICAL_TOKEN', default='') | trim %}{% if _env != '' %}{{ _env }}{% else %}{{ exec(command='infisical user get token --silent --plain 2>/dev/null || true') | trim }}{% endif %}", tools = true, redact = true }
-
 [tools]
 #* Main
-"aqua:go-task/task" = "3.53.1"                       # Used as a task runner
 "aqua:jdx/pitchfork" = "2.27.0"                      # Used for managing auto-running daemons
-"github:Infisical/cli" = "v0.43.133"                 # Used for accessing remote secrets via fnox
-"github:jdx/fnox" = "v1.35.2"                        # Used for managing & injecting envs & secrets
 "cargo:templatry" = "0.2.0"                          # Used for generating config files
 "github:CircleCI-Public/circleci-cli" = "v1.0.50757" # Use to validate circleci orb
 #* Linting

@@ -1,0 +1,57 @@
+---
+version: 2.1
+orbs:
+  orb-tools: circleci/orb-tools@12.5.0
+  # The orb definition is intentionally not included here. It will be injected into the pipeline.
+  with-mise: {}
+executors:
+  linux:
+    docker:
+      - image: cimg/base:current@sha256:668174490adc470cd34eb3aa178939d65f817bc13ef657a94ff0278338f7d8da
+    resource_class: small
+  linux-arm:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: arm.medium
+  macos:
+    macos:
+      xcode: 26.4.1
+    resource_class: m4pro.medium
+filters: &filters
+  tags: # Use this tag to ensure test jobs always run, even though the downstream publish job will only run on release tags.
+    only: /.*/
+release-filters: &release-filters
+  branches: # Filter for release tags.
+    ignore: /.*/
+  tags:
+    only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
+workflows:
+  test-deploy:
+    jobs:
+      # This lints the source code using our orb, killing two birds with one stone.
+      - with-mise/run_task:
+          filters: *filters
+          matrix:
+            alias: lint-src
+            parameters:
+              executor: [linux, linux-arm, macos]
+          commands: templatry generate && hk check --all
+      # The orb must be re-packed for publishing, and saved to the workspace.
+      - orb-tools/pack:
+          executor:
+            name: orb-tools/default
+            resource_class: small
+          filters: *release-filters
+      - orb-tools/publish:
+          executor:
+            name: orb-tools/default
+            resource_class: small
+          orb_name: quasiflo/with-mise
+          vcs_type: github
+          pub_type: production
+          # Ensure this job requires all test jobs and the pack job.
+          requires:
+            - lint-src
+            - orb-tools/pack
+          context: orb-publishing
+          filters: *release-filters

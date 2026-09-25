@@ -1,0 +1,17 @@
+---
+description: >
+  Example of running lint commands with mise-installed tools.
+usage:
+  version: 2.1
+  orbs:
+    with-mise: quasiflo/with-mise@0.1.0 # x-release-please-version
+  executors:
+    linux:
+      docker:
+        - image: cimg/base:current
+  workflows:
+    use-my-orb:
+      jobs:
+        - with-mise/run_task:
+            executor: linux
+            commands: templatry generate && hk check --all

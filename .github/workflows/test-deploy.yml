@@ -1,0 +1,24 @@
+---
+name: Lint and Test
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+permissions: {}
+jobs:
+  lint-test:
+    name: Lint and Test
+    runs-on: ubuntu-slim
+    permissions:
+      contents: read # required for actions/checkout
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: $/.github/actions/run_task
+        with:
+          commands: templatry generate && hk check --all

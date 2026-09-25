@@ -1,0 +1,33 @@
+---
+version: 2.1
+setup: true
+orbs:
+  orb-tools: circleci/orb-tools@12.5.0
+filters: &filters
+  tags:
+    only: /.*/
+workflows:
+  lint-pack:
+    jobs:
+      - orb-tools/pack:
+          executor:
+            name: orb-tools/default
+            resource_class: small
+          filters: *filters
+      - orb-tools/review:
+          executor:
+            name: orb-tools/default
+            resource_class: small
+          orb_name: with-mise
+          filters: *filters
+          exclude: RC006,RC007,RC008,RC009 # Exclude checks that rely on public repository urls. Also exclude complex run field check
+      - orb-tools/continue:
+          executor:
+            name: orb-tools/default
+            resource_class: small
+          pipeline_number: << pipeline.number >>
+          vcs_type: github
+          config_path: .config/.circleci/test-deploy.yml
+          orb_name: with-mise
+          requires: [orb-tools/pack, orb-tools/review]
+          filters: *filters

@@ -1,0 +1,50 @@
+---
+description: |
+  This job downloads all necessary mise tools & dependencies and executes your task.
+parameters:
+  executor:
+    type: executor
+    description: Executor to run job with
+  skip:
+    type: boolean
+    default: false
+    description: Skip this job
+    # jscpd:ignore-start
+  use_cache:
+    type: boolean
+    default: false
+    description: Cache mise tool dependencies
+  strict_mode:
+    type: boolean
+    default: true
+    description: Runs `mise install --locked`, avoiding implicit dependency changes during resolution
+  use_tools:
+    type: string
+    default: ""
+    description: Comma-separated list of full mise tool IDs to install & activate (as in mise.toml, e.g. "aqua:jdx/hk,node"). All others will be ignored (sets MISE_ENABLE_TOOLS). Mutually exclusive with exclude_tools option.
+  exclude_tools:
+    type: string
+    default: ""
+    description: Comma-separated list of full mise tool IDs to exclude from installation (as in mise.toml, e.g. "aqua:jdx/hk"). All others will be included (sets MISE_DISABLE_TOOLS). Mutually exclusive with use_tools option.
+  commands:
+    type: string
+    description: String of commands to run
+    # jscpd:ignore-end
+executor: << parameters.executor >>
+steps:
+  - unless:
+      condition: << parameters.skip >>
+      steps:
+        - checkout
+        - run_task:
+            use_cache: << parameters.use_cache >>
+            strict_mode: << parameters.strict_mode >>
+            use_tools: << parameters.use_tools >>
+            exclude_tools: << parameters.exclude_tools >>
+            commands: << parameters.commands >>
+  - when:
+      condition: << parameters.skip >>
+      steps:
+        - run:
+            name: Skipping job
+            command: echo "Job skipped"

@@ -4,4 +4,14 @@ amends "package://github.com/jdx/hk/releases/download/v2.1.0/hk@2.1.0#/Config.pk
 
 import "generated/generated.pkl"
 
-steps = generated.addSteps(generated.steps)
+steps = generated.addSteps((generated.steps) {
+    ["[fix] vendor action script"] {
+      glob = List("src/scripts/everything.sh", ".github/actions/run_task/everything.sh")
+      fix = "src/scripts/sync-action.sh"
+      check = "cmp -s src/scripts/everything.sh .github/actions/run_task/everything.sh || (echo 'Action script drift: run src/scripts/sync-action.sh' >&2; exit 1)"
+    }
+    ["[lint] copy-paste"] {
+      exclude = List("**/CHANGELOG.md", ".github/actions/run_task/everything.sh")
+    }
+  }
+)

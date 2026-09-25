@@ -45,26 +45,6 @@ url = "https://github.com/astral-sh/uv/releases/download/0.12.17/uv-aarch64-appl
 url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/573252913"
 provenance = "github-attestations"
 
-[[tools."aqua:go-task/task"]]
-version = "3.53.1"
-backend = "aqua:go-task/task"
-specifiers = ["3.53.1"]
-
-[tools."aqua:go-task/task"."platforms.linux-arm64"]
-checksum = "sha256:e3ad19101493a0112e1f22ae8ccc54bf03e533b1076a0ca1e6c782a09ad2e588"
-url = "https://github.com/go-task/task/releases/download/v3.53.1/task_linux_arm64.tar.gz"
-url_api = "https://api.github.com/repos/go-task/task/releases/assets/519645523"
-
-[tools."aqua:go-task/task"."platforms.linux-x64"]
-checksum = "sha256:a54a408f6861ff921f6e87774180db31bacd8c1e7c944ca696db9fea49a82fc7"
-url = "https://github.com/go-task/task/releases/download/v3.53.1/task_linux_amd64.tar.gz"
-url_api = "https://api.github.com/repos/go-task/task/releases/assets/519645449"
-
-[tools."aqua:go-task/task"."platforms.macos-arm64"]
-checksum = "sha256:85d2d96c2380b33d7855b07b3f7a20dc7ca0eda999a26efa0fb5f6f32b366cd7"
-url = "https://github.com/go-task/task/releases/download/v3.53.1/task_darwin_arm64.tar.gz"
-url_api = "https://api.github.com/repos/go-task/task/releases/assets/519645491"
-
 [[tools."aqua:google/yamlfmt"]]
 version = "0.21.0"
 backend = "aqua:google/yamlfmt"
@@ -299,26 +279,6 @@ checksum = "sha256:e760d831c0ee6164f3e4fef7af7dd9d3d30b65995f86d3c920de9ca24ba5a
 url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.50757/circleci-cli_1.0.50757_darwin_arm64.tar.gz"
 url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/572795135"
 
-[[tools."github:Infisical/cli"]]
-version = "0.43.133"
-backend = "github:Infisical/cli"
-specifiers = ["v0.43.133"]
-
-[tools."github:Infisical/cli"."platforms.linux-arm64"]
-checksum = "sha256:63b59a8a44ef6f04c4a1166a4e108575fdbd3f054e9d1bffd44f34b74eec9fa0"
-url = "https://github.com/Infisical/cli/releases/download/v0.43.133/cli_0.43.133_linux_arm64.tar.gz"
-url_api = "https://api.github.com/repos/Infisical/cli/releases/assets/573842785"
-
-[tools."github:Infisical/cli"."platforms.linux-x64"]
-checksum = "sha256:ec79bed991c7b96350c015ee37cffe61fb8bd8dcc5322d9a1dd65f168959efb3"
-url = "https://github.com/Infisical/cli/releases/download/v0.43.133/cli_0.43.133_linux_amd64.tar.gz"
-url_api = "https://api.github.com/repos/Infisical/cli/releases/assets/573842833"
-
-[tools."github:Infisical/cli"."platforms.macos-arm64"]
-checksum = "sha256:8fa6795b1d17578c108b9b63a5b4c74c38c5c8af604764f260a87082f7354f62"
-url = "https://github.com/Infisical/cli/releases/download/v0.43.133/cli_0.43.133_darwin_arm64.tar.gz"
-url_api = "https://api.github.com/repos/Infisical/cli/releases/assets/573837011"
-
 [[tools."github:asciinema/asciinema"]]
 version = "3.2.1"
 backend = "github:asciinema/asciinema"
@@ -338,29 +298,6 @@ url_api = "https://api.github.com/repos/asciinema/asciinema/releases/assets/4492
 checksum = "sha256:1f0c76da7855601df93e5dccdf69b7c683b81beff1411e38b3802de1f5fc7a1c"
 url = "https://github.com/asciinema/asciinema/releases/download/v3.2.1/asciinema-aarch64-apple-darwin"
 url_api = "https://api.github.com/repos/asciinema/asciinema/releases/assets/449290357"
-
-[[tools."github:jdx/fnox"]]
-version = "1.35.2"
-backend = "github:jdx/fnox"
-specifiers = ["v1.35.2"]
-
-[tools."github:jdx/fnox"."platforms.linux-arm64"]
-checksum = "sha256:d404b219b6a3c3c4f3531d88cb7d3b96d00891b826d8fcfc2941b8a060028015"
-url = "https://github.com/jdx/fnox/releases/download/v1.35.2/fnox-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/561018918"
-provenance = "github-attestations"
-
-[tools."github:jdx/fnox"."platforms.linux-x64"]
-checksum = "sha256:5f95929bb8b73cd849b238fbefe3dbf8706f57f876cc5ae23aa9aa9da62a40a9"
-url = "https://github.com/jdx/fnox/releases/download/v1.35.2/fnox-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/561018959"
-provenance = "github-attestations"
-
-[tools."github:jdx/fnox"."platforms.macos-arm64"]
-checksum = "sha256:3f6e9b4f7a59a5712abe48cf6c97b2a0600392b5cb54059a80b53497adeab354"
-url = "https://github.com/jdx/fnox/releases/download/v1.35.2/fnox-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/561018919"
-provenance = "github-attestations"
 
 [[tools."github:kucherenko/jscpd"]]
 version = "5.3.0"
