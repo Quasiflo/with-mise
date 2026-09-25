@@ -260,24 +260,24 @@ backend = "cargo:templatry"
 specifiers = ["0.2.0"]
 
 [[tools."github:CircleCI-Public/circleci-cli"]]
-version = "1.0.50831"
+version = "1.0.50849"
 backend = "github:CircleCI-Public/circleci-cli"
-specifiers = ["v1.0.50831"]
+specifiers = ["v1.0.50849"]
 
 [tools."github:CircleCI-Public/circleci-cli"."platforms.linux-arm64"]
-checksum = "sha256:996dab4475c2596b8899559176492ea356b0bee5a3f94689f62d769d2bd0c962"
-url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.50831/circleci-cli_1.0.50831_linux_arm64.tar.gz"
-url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/579147424"
+checksum = "sha256:9b1dbc652793db16ffb444268d4c1a13fc9ef1a9cc3ced1624592bbe1386b289"
+url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.50849/circleci-cli_1.0.50849_linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/579333935"
 
 [tools."github:CircleCI-Public/circleci-cli"."platforms.linux-x64"]
-checksum = "sha256:f7950899318dd118b87ac89528eaa738b900e6dafc66d10c0890330b28f170bd"
-url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.50831/circleci-cli_1.0.50831_linux_amd64.tar.gz"
-url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/579147432"
+checksum = "sha256:1a47f08f1a44fa1492e6c1c8a7166bc7c350e03a341a82de8c5c2bf31b8394d1"
+url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.50849/circleci-cli_1.0.50849_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/579333936"
 
 [tools."github:CircleCI-Public/circleci-cli"."platforms.macos-arm64"]
-checksum = "sha256:cdb582bb1cba33f0e955ea0376f19a134c7f9b0cb33cf97117a7ccc6f9a2f60e"
-url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.50831/circleci-cli_1.0.50831_darwin_arm64.tar.gz"
-url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/579147372"
+checksum = "sha256:81a3b255a465fda7d381dc6880dc1c35f9e6ab7de9ed9f206dab3bb02ee69bcc"
+url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.50849/circleci-cli_1.0.50849_darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/579333934"
 
 [[tools."github:asciinema/asciinema"]]
 version = "3.2.1"
