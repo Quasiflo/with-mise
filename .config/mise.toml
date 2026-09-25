@@ -1,0 +1,34 @@
+#* Backend Priority Order: Core, Aqua, Github, Package Manager (cargo, npm, pipx)
+
+# [env]
+# INFISICAL_TOKEN = { value = "{% set _env = get_env(name='INFISICAL_TOKEN', default='') | trim %}{% if _env != '' %}{{ _env }}{% else %}{{ exec(command='infisical user get token --silent --plain 2>/dev/null || true') | trim }}{% endif %}", tools = true, redact = true }
+
+[tools]
+#* Main
+"aqua:go-task/task" = "3.53.1"                       # Used as a task runner
+"aqua:jdx/pitchfork" = "2.27.0"                      # Used for managing auto-running daemons
+"github:Infisical/cli" = "v0.43.133"                 # Used for accessing remote secrets via fnox
+"github:jdx/fnox" = "v1.35.2"                        # Used for managing & injecting envs & secrets
+"cargo:templatry" = "0.2.0"                          # Used for generating config files
+"github:CircleCI-Public/circleci-cli" = "v1.0.50757" # Use to validate circleci orb
+#* Linting
+"aqua:jdx/hk" = "2.1.0"                    # Used for running linting, formatting & git hooks
+"aqua:astral-sh/uv" = "0.12.17"            # Used for python (pipx) linting tools
+"aqua:mikefarah/yq" = "4.53.6"             # Used for validating & formatting JSON & toml parsing
+"aqua:google/yamlfmt" = "0.21.0"           # Used for formatting YAML
+"aqua:tombi-toml/tombi" = "1.5.5"          # Used for linting & formatting toml
+"aqua:EmbarkStudios/cargo-deny" = "0.20.2" # Used for auditing dependencies (hk cargo deny step)
+"aqua:rvben/rumdl" = "0.2.74"              # Used for linting & formatting markdown
+"aqua:loeffel-io/ls-lint" = "2.3.1"        # Used for enforcing folder & file naming conventions
+"aqua:lycheeverse/lychee" = "0.24.2"       # Used for checking for dead links
+"aqua:koalaman/shellcheck" = "0.11.0"      # Used for linting shell scripts
+"aqua:mvdan/sh" = "3.14.1"                 # Used for linting & formatting shell scripts
+"github:kucherenko/jscpd" = "v5.3.0"       # Used for detecting code duplication
+"github:zizmorcore/zizmor" = "v1.30.1"     # Used for statically analyzing github actions
+"github:mongodb/kingfisher" = "v2.5.0"     # Used for checking for leaked credentials & secrets
+"github:asciinema/asciinema" = "3.2.1"     # Used for generating cli demos
+"pipx:yamllint" = "1.38.0"                 # Used for linting YAML
+
+[settings]
+lockfile = true
+lockfile_platforms = ["linux-arm64", "linux-x64", "macos-arm64"]
