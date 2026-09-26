@@ -155,11 +155,12 @@ mise_config_hash() {
 
 #! Subcommand Functions
 run_setup() {
-	#* --- Validate required env vars ---
-	: "${STRICT_MODE:?STRICT_MODE is not set}"
-	: "${USE_TOOLS:?USE_TOOLS is not set}"
-	: "${EXCLUDE_TOOLS:?EXCLUDE_TOOLS is not set}"
-	if has_value "$USE_TOOLS" && has_value "$EXCLUDE_TOOLS"; then
+	#* --- Normalize optional env vars (defensive under `set -u`) ---
+	# USE_TOOLS/EXCLUDE_TOOLS default to "" (= all tools enabled). STRICT_MODE defaults to "true". Empty/unset are valid; only non-empty values in both tool lists are mutually exclusive.
+	STRICT_MODE="${STRICT_MODE:-true}"
+	USE_TOOLS="${USE_TOOLS:-}"
+	EXCLUDE_TOOLS="${EXCLUDE_TOOLS:-}"
+	if has_value "${USE_TOOLS:-}" && has_value "${EXCLUDE_TOOLS:-}"; then
 		echo "USE_TOOLS & EXCLUDE_TOOLS are mutually exclusive! Choose one!"
 		exit 1
 	fi
@@ -203,14 +204,14 @@ run_setup() {
 	#* Set Envs
 	# mise semantics (verified): MISE_ENABLE_TOOLS unset = all enabled;
 	# MISE_ENABLE_TOOLS="" = all disabled. So default/exclude must UNSET enable and use MISE_DISABLE_TOOLS for exclusions.
-	if has_value "$USE_TOOLS"; then
-		MISE_ENABLE_TOOLS="$(normalize_tools "$USE_TOOLS")"
+	if has_value "${USE_TOOLS:-}"; then
+		MISE_ENABLE_TOOLS="$(normalize_tools "${USE_TOOLS:-}")"
 		export MISE_ENABLE_TOOLS
 		unset MISE_DISABLE_TOOLS || true
 		persist_env MISE_ENABLE_TOOLS
-	elif has_value "$EXCLUDE_TOOLS"; then
+	elif has_value "${EXCLUDE_TOOLS:-}"; then
 		unset MISE_ENABLE_TOOLS || true
-		MISE_DISABLE_TOOLS="$(normalize_tools "$EXCLUDE_TOOLS")"
+		MISE_DISABLE_TOOLS="$(normalize_tools "${EXCLUDE_TOOLS:-}")"
 		export MISE_DISABLE_TOOLS
 		persist_env MISE_DISABLE_TOOLS
 	else
@@ -222,7 +223,7 @@ run_setup() {
 	# use/exclude filters are empty. Versions are covered by FILES_CHECKSUM.
 	# Falls back to hashing the filter selection if listing fails.
 	if ACTIVE_TOOLS=$(mise ls --current --no-header 2>/dev/null | awk '{print $1}' | sort -u); then
-		if has_value "$USE_TOOLS" && [ -z "$ACTIVE_TOOLS" ]; then
+		if has_value "${USE_TOOLS:-}" && [ -z "$ACTIVE_TOOLS" ]; then
 			echo "Error: USE_TOOLS matched no tools. Use full tool IDs as in mise.toml (e.g. aqua:jdx/hk,node) — short names do not match non-core tools." >&2
 			exit 1
 		fi

@@ -1,7 +1,7 @@
 ---
 version: 2.1
 description: >
-  CI/CD system "glue" for jobs using Mise-installed tools
+  Install mise tools with optional caching and run any task in CI. Wraps mise install, lockfile strict mode, and tool allow/deny filters for reproducible CircleCI jobs.
 display:
   home_url: "https://github.com/Quasiflo/with-mise"
   source_url: "https://github.com/Quasiflo/with-mise"
