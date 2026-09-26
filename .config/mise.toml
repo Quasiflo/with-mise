@@ -2,10 +2,12 @@
 
 [tools]
 #* Main
+"core:rust" = "1.98.1"                               # TODO remove once publishing templatry binaries
 "aqua:jdx/pitchfork" = "2.27.0"                      # Used for managing auto-running daemons
 "cargo:templatry" = "0.2.0"                          # Used for generating config files
 "github:CircleCI-Public/circleci-cli" = "v1.0.50849" # Use to validate circleci orb
 #* Linting
+"core:python" = "3.14.7"                   # Used for python linting tools
 "aqua:jdx/hk" = "2.1.0"                    # Used for running linting, formatting & git hooks
 "aqua:astral-sh/uv" = "0.12.17"            # Used for python (pipx) linting tools
 "aqua:mikefarah/yq" = "4.53.6"             # Used for validating & formatting JSON & toml parsing
