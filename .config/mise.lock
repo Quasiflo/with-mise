@@ -23,26 +23,26 @@ url = "https://github.com/EmbarkStudios/cargo-deny/releases/download/0.20.2/carg
 url_api = "https://api.github.com/repos/EmbarkStudios/cargo-deny/releases/assets/471597689"
 
 [[tools."aqua:astral-sh/uv"]]
-version = "0.12.18"
+version = "0.12.19"
 backend = "aqua:astral-sh/uv"
-specifiers = ["0.12.18"]
+specifiers = ["0.12.19"]
 
 [tools."aqua:astral-sh/uv"."platforms.linux-arm64"]
-checksum = "sha256:afb6291f3f0a6b4521fc67b947822506c41dde5b60d2189dd8f3695b2ac8c9e7"
-url = "https://github.com/astral-sh/uv/releases/download/0.12.18/uv-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/582430569"
+checksum = "sha256:0804e9b164c64b6914182d5920c08551958a095986f10a3731056df701126436"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.19/uv-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/587158851"
 provenance = "github-attestations"
 
 [tools."aqua:astral-sh/uv"."platforms.linux-x64"]
-checksum = "sha256:89eadd7c76fc063887959510d5ba0ab1264dfd5f1143b925ddb73021a40acf16"
-url = "https://github.com/astral-sh/uv/releases/download/0.12.18/uv-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/582430671"
+checksum = "sha256:23bf5552d220e0842b65c862097b2ebaeba0064b74eda5e565e77fd25969d8c8"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.19/uv-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/587159011"
 provenance = "github-attestations"
 
 [tools."aqua:astral-sh/uv"."platforms.macos-arm64"]
-checksum = "sha256:cf40e0c6a202190ccd9e0406dcfdd5b2d6668a9a5c779b17948963df32aafe5b"
-url = "https://github.com/astral-sh/uv/releases/download/0.12.18/uv-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/582430554"
+checksum = "sha256:a9a8df1eedeb192f2e47e40e2faabfb387db4b850209118786d42f89dde3e0ba"
+url = "https://github.com/astral-sh/uv/releases/download/0.12.19/uv-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/587158826"
 provenance = "github-attestations"
 
 [[tools."aqua:google/yamlfmt"]]
@@ -260,26 +260,26 @@ backend = "cargo:templatry"
 specifiers = ["0.2.0"]
 
 [[tools."github:CircleCI-Public/circleci-cli"]]
-version = "1.0.51305"
+version = "1.0.51336"
 backend = "github:CircleCI-Public/circleci-cli"
-specifiers = ["v1.0.51305"]
+specifiers = ["v1.0.51336"]
 
 [tools."github:CircleCI-Public/circleci-cli"."platforms.linux-arm64"]
-checksum = "sha256:70b66a1081718150cfaef6e6990cea2f0c69b143afd689bf3a30603babedabbd"
-url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.51305/circleci-cli_1.0.51305_linux_arm64.tar.gz"
-url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/584624475"
+checksum = "sha256:54243ccd11fc5030749c08af7ca743bc5d0de6083a320752ace7dd62105e4708"
+url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.51336/circleci-cli_1.0.51336_linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/585800985"
 provenance = "github-attestations"
 
 [tools."github:CircleCI-Public/circleci-cli"."platforms.linux-x64"]
-checksum = "sha256:9e819bd07b47d20539f8a028291992243aee5cd4691f52eb5bb421d442908494"
-url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.51305/circleci-cli_1.0.51305_linux_amd64.tar.gz"
-url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/584624476"
+checksum = "sha256:5aff0845ff02514d6655a8f9b5309bbdc5223d2ee060d751f5719f3e6cab2c56"
+url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.51336/circleci-cli_1.0.51336_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/585800991"
 provenance = "github-attestations"
 
 [tools."github:CircleCI-Public/circleci-cli"."platforms.macos-arm64"]
-checksum = "sha256:40e108dea2d5b5088bbc630365f12995121ef5f8edf5f15137a8d5aac541a9f0"
-url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.51305/circleci-cli_1.0.51305_darwin_arm64.tar.gz"
-url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/584624478"
+checksum = "sha256:ef4324c1f992707959f0c39cde510363202a87b4dd86dcecb5a311a19c8ef474"
+url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.51336/circleci-cli_1.0.51336_darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/585801025"
 provenance = "github-attestations"
 
 [[tools."github:asciinema/asciinema"]]
@@ -326,26 +326,26 @@ url_api = "https://api.github.com/repos/kucherenko/jscpd/releases/assets/5836342
 provenance = "github-attestations"
 
 [[tools."github:mongodb/kingfisher"]]
-version = "2.6.0"
+version = "2.7.0"
 backend = "github:mongodb/kingfisher"
-specifiers = ["v2.6.0"]
+specifiers = ["v2.7.0"]
 
 [tools."github:mongodb/kingfisher"."platforms.linux-arm64"]
-checksum = "sha256:4e68484ff04c0476c1cf84c1a235fa552f79f05e5d62ae0e09ebfd91542dc308"
-url = "https://github.com/mongodb/kingfisher/releases/download/v2.6.0/kingfisher-linux-arm64.tgz"
-url_api = "https://api.github.com/repos/mongodb/kingfisher/releases/assets/584573754"
+checksum = "sha256:44b15a0ca5b90f0d13f0d0a7a8d6320ea52662bb207e95d9763058a0cff80b2a"
+url = "https://github.com/mongodb/kingfisher/releases/download/v2.7.0/kingfisher-linux-arm64.tgz"
+url_api = "https://api.github.com/repos/mongodb/kingfisher/releases/assets/585499315"
 provenance = "github-attestations"
 
 [tools."github:mongodb/kingfisher"."platforms.linux-x64"]
-checksum = "sha256:05c50dfa1bcf65e3bd5a8087a8d39d44663fff94000d6671eb0eced3cb931a36"
-url = "https://github.com/mongodb/kingfisher/releases/download/v2.6.0/kingfisher-linux-x64.tgz"
-url_api = "https://api.github.com/repos/mongodb/kingfisher/releases/assets/584573596"
+checksum = "sha256:70781a6a4e6c52c7a5af120af1716abad958ca4a31225c8e2293719106276467"
+url = "https://github.com/mongodb/kingfisher/releases/download/v2.7.0/kingfisher-linux-x64.tgz"
+url_api = "https://api.github.com/repos/mongodb/kingfisher/releases/assets/585499191"
 provenance = "github-attestations"
 
 [tools."github:mongodb/kingfisher"."platforms.macos-arm64"]
-checksum = "sha256:8388018582d4a81fb06c2c932133bf04dba431d5db669ac712523399ae144861"
-url = "https://github.com/mongodb/kingfisher/releases/download/v2.6.0/kingfisher-darwin-arm64.tgz"
-url_api = "https://api.github.com/repos/mongodb/kingfisher/releases/assets/584573910"
+checksum = "sha256:0faf1d5790d4b45ad49bf0b08ca6d390b3177797bafe8162bc6d1a61dd576f07"
+url = "https://github.com/mongodb/kingfisher/releases/download/v2.7.0/kingfisher-darwin-arm64.tgz"
+url_api = "https://api.github.com/repos/mongodb/kingfisher/releases/assets/585499485"
 provenance = "github-attestations"
 
 [[tools."github:zizmorcore/zizmor"]]
