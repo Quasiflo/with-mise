@@ -260,26 +260,26 @@ backend = "cargo:templatry"
 specifiers = ["0.2.0"]
 
 [[tools."github:CircleCI-Public/circleci-cli"]]
-version = "1.0.51515"
+version = "1.0.51648"
 backend = "github:CircleCI-Public/circleci-cli"
-specifiers = ["v1.0.51515"]
+specifiers = ["v1.0.51648"]
 
 [tools."github:CircleCI-Public/circleci-cli"."platforms.linux-arm64"]
-checksum = "sha256:c9f023cd9801a4b7d9d07631f92b80fbd83a2f9487be311ae3b58cbbe0cf2b61"
-url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.51515/circleci-cli_1.0.51515_linux_arm64.tar.gz"
-url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/588388375"
+checksum = "sha256:b38caa2a0fcf7cfbb4652d9170882783229cfb367d7e7beeb2c6c60be99b1ff1"
+url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.51648/circleci-cli_1.0.51648_linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/595775786"
 provenance = "github-attestations"
 
 [tools."github:CircleCI-Public/circleci-cli"."platforms.linux-x64"]
-checksum = "sha256:208d0e0fab4ebd1733381c0863557df2a1eed21bcb05cc55aa3efae1aac51f29"
-url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.51515/circleci-cli_1.0.51515_linux_amd64.tar.gz"
-url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/588388341"
+checksum = "sha256:87a72dc9bc41da9d41236dc8e62a21f153323ce638b0908cdc252a41a82041a3"
+url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.51648/circleci-cli_1.0.51648_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/595775787"
 provenance = "github-attestations"
 
 [tools."github:CircleCI-Public/circleci-cli"."platforms.macos-arm64"]
-checksum = "sha256:43024d0128eaa63fb5b3881e0bbe8c1062f55ac8c7970e1296ce5f0fd81b6305"
-url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.51515/circleci-cli_1.0.51515_darwin_arm64.tar.gz"
-url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/588388340"
+checksum = "sha256:19c14a935c82f988c66fba105bf515c3e495bfab680912c3f7d7c32fef2218eb"
+url = "https://github.com/CircleCI-Public/circleci-cli/releases/download/v1.0.51648/circleci-cli_1.0.51648_darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/CircleCI-Public/circleci-cli/releases/assets/595775836"
 provenance = "github-attestations"
 
 [[tools."github:asciinema/asciinema"]]
@@ -303,26 +303,26 @@ url = "https://github.com/asciinema/asciinema/releases/download/v3.2.1/asciinema
 url_api = "https://api.github.com/repos/asciinema/asciinema/releases/assets/449290357"
 
 [[tools."github:kucherenko/jscpd"]]
-version = "5.3.2"
+version = "5.3.3"
 backend = "github:kucherenko/jscpd"
-specifiers = ["v5.3.2"]
+specifiers = ["v5.3.3"]
 
 [tools."github:kucherenko/jscpd"."platforms.linux-arm64"]
-checksum = "sha256:ddf336de86eb7e26632062a01e751417f6579b4422e9156aa3836fdab1d0265d"
-url = "https://github.com/kucherenko/jscpd/releases/download/v5.3.2/jscpd-linux-arm64-gnu.tar.gz"
-url_api = "https://api.github.com/repos/kucherenko/jscpd/releases/assets/583634217"
+checksum = "sha256:e195c02b27ff01ad6debe0a0e4cdbec0cb0f250022c77b7c88119d020ab7c1f4"
+url = "https://github.com/kucherenko/jscpd/releases/download/v5.3.3/jscpd-linux-arm64-gnu.tar.gz"
+url_api = "https://api.github.com/repos/kucherenko/jscpd/releases/assets/595512986"
 provenance = "github-attestations"
 
 [tools."github:kucherenko/jscpd"."platforms.linux-x64"]
-checksum = "sha256:97259f222ea7f6d51a0f2faa98ed5889430233e0fb8d2c129f23d84aff4b93b2"
-url = "https://github.com/kucherenko/jscpd/releases/download/v5.3.2/jscpd-linux-x64-gnu.tar.gz"
-url_api = "https://api.github.com/repos/kucherenko/jscpd/releases/assets/583634214"
+checksum = "sha256:0a1f298a7e010d439be0b21fb8271cf92fca10f9b10fa8eb111320f3d129b62c"
+url = "https://github.com/kucherenko/jscpd/releases/download/v5.3.3/jscpd-linux-x64-gnu.tar.gz"
+url_api = "https://api.github.com/repos/kucherenko/jscpd/releases/assets/595512981"
 provenance = "github-attestations"
 
 [tools."github:kucherenko/jscpd"."platforms.macos-arm64"]
-checksum = "sha256:c629e1d2c7a6c41230a0f3bdd72d5ee69996013527a19eabbb5f0e845249dfbc"
-url = "https://github.com/kucherenko/jscpd/releases/download/v5.3.2/jscpd-darwin-arm64.tar.gz"
-url_api = "https://api.github.com/repos/kucherenko/jscpd/releases/assets/583634218"
+checksum = "sha256:a90634a456876a8985abd4c4e6674355f4d76f2166fec10d0f295ee5e17c5d6c"
+url = "https://github.com/kucherenko/jscpd/releases/download/v5.3.3/jscpd-darwin-arm64.tar.gz"
+url_api = "https://api.github.com/repos/kucherenko/jscpd/releases/assets/595512987"
 provenance = "github-attestations"
 
 [[tools."github:mongodb/kingfisher"]]
