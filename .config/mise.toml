@@ -3,25 +3,25 @@
 [tools]
 #* Main
 "core:rust" = "1.98.1"                               # TODO remove once publishing templatry binaries
-"aqua:jdx/pitchfork" = "2.28.0"                      # Used for managing auto-running daemons
+"aqua:jdx/pitchfork" = "2.29.0"                      # Used for managing auto-running daemons
 "cargo:templatry" = "0.2.0"                          # Used for generating config files
 "github:CircleCI-Public/circleci-cli" = "v1.0.51648" # Use to validate circleci orb
 #* Linting
 "core:python" = "3.14.7"                   # Used for python linting tools
 "aqua:jdx/hk" = "2.4.0"                    # Used for running linting, formatting & git hooks
-"aqua:astral-sh/uv" = "0.12.20"            # Used for python (pipx) linting tools
+"aqua:astral-sh/uv" = "0.12.21"            # Used for python (pipx) linting tools
 "aqua:mikefarah/yq" = "4.54.1"             # Used for validating & formatting JSON & toml parsing
 "aqua:google/yamlfmt" = "0.21.0"           # Used for formatting YAML
-"aqua:tombi-toml/tombi" = "1.5.8"          # Used for linting & formatting toml
+"aqua:tombi-toml/tombi" = "1.6.1"          # Used for linting & formatting toml
 "aqua:EmbarkStudios/cargo-deny" = "0.20.2" # Used for auditing dependencies (hk cargo deny step)
-"aqua:rvben/rumdl" = "0.2.77"              # Used for linting & formatting markdown
+"aqua:rvben/rumdl" = "0.2.78"              # Used for linting & formatting markdown
 "aqua:loeffel-io/ls-lint" = "2.3.1"        # Used for enforcing folder & file naming conventions
 "aqua:lycheeverse/lychee" = "0.24.2"       # Used for checking for dead links
 "aqua:koalaman/shellcheck" = "0.11.0"      # Used for linting shell scripts
 "aqua:mvdan/sh" = "3.14.1"                 # Used for linting & formatting shell scripts
 "github:kucherenko/jscpd" = "v5.3.3"       # Used for detecting code duplication
 "github:zizmorcore/zizmor" = "v1.30.1"     # Used for statically analyzing github actions
-"github:mongodb/kingfisher" = "v2.7.0"     # Used for checking for leaked credentials & secrets
+"github:mongodb/kingfisher" = "v2.8.0"     # Used for checking for leaked credentials & secrets
 "github:asciinema/asciinema" = "3.2.1"     # Used for generating cli demos
 "pipx:yamllint" = "1.38.0"                 # Used for linting YAML
 
