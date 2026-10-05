@@ -19,7 +19,7 @@ What it does per run:
 ```yaml
 version: 2.1
 orbs:
-  with-mise: quasiflo/with-mise@0.1.0 # x-release-please-version
+  with-mise: quasiflo/with-mise@0.1.1 # x-release-please-version
 executors:
   linux:
     docker:
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - uses: Quasiflo/with-mise/.github/actions/run_task@v0.1.0 # x-release-please-version
+      - uses: Quasiflo/with-mise/.github/actions/run_task@v0.1.1 # x-release-please-version
         with:
           commands: mise run build
 ```
