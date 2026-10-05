@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/Quasiflo/with-mise/compare/v0.1.0...v0.1.1) (2026-10-05)
+
+
+### Bug Fixes
+
+* resolve failing linux gpg verification ([301418f](https://github.com/Quasiflo/with-mise/commit/301418f7265d2c8f37c4dec5ee9a6481d8e63340))
+
 ## 0.1.0 (2026-09-26)
 
 
