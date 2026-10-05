@@ -4,7 +4,7 @@ description: >
 usage:
   version: 2.1
   orbs:
-    with-mise: quasiflo/with-mise@0.1.0 # x-release-please-version
+    with-mise: quasiflo/with-mise@0.1.1 # x-release-please-version
   executors:
     linux:
       docker:
