@@ -375,7 +375,7 @@ provenance = "github-attestations"
 version = "1.38.0"
 backend = "pipx:yamllint"
 specifiers = ["1.38.0"]
-uv = { path = "mise/locks/pipx-yamllint/1.38.0", digest = "sha256:da95d95c985f02dda36eaac428e92d3e92734d68431222430ad5be8d718034a0" }
+uv = { path = "mise/locks/pipx-yamllint/1.38.0", digest = "sha256:a0cfcc4a3031bf461d0110b37cf8d1eeef2b937a1ec7bc5f0e1fb08857f243b1" }
 
 [[tools.python]]
 version = "3.14.8"

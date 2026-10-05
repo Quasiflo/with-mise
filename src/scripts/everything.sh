@@ -181,20 +181,8 @@ run_setup() {
 	# shellcheck disable=SC2064 # intentional: expand now, clean the same dir on EXIT
 	trap "rm -rf \"${WITH_MISE_TMP_DIR:?}\"" EXIT INT TERM
 
-	if [[ "$(uname)" == "Darwin" ]]; then
-		# install.sh verifies the downloaded tarball checksum internally (get_checksum + shasum check for macos targets); GPG would need brew gnupg on stock macOS images, so checksum is the practical check.
-		curl -fsSL https://mise.run | sh
-	else
-		#* Install Mise & verify against known key
-		if ! command -v gpg >/dev/null 2>&1; then
-			echo "Error: gpg is required for Linux mise install verification" >&2
-			exit 1
-		fi
-		gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys 24853EC9F655CE80B48E6C3A8B81C9D17413A06D
-		curl -fsSL https://mise.en.dev/install.sh.sig -o "$WITH_MISE_TMP_DIR/install.sh.sig"
-		gpg --batch --decrypt "$WITH_MISE_TMP_DIR/install.sh.sig" >"$WITH_MISE_TMP_DIR/install.sh"
-		sh "$WITH_MISE_TMP_DIR/install.sh"
-	fi
+	# install.sh verifies the downloaded tarball checksum internally
+	curl -fsSL https://mise.run | sh
 
 	prepend_path "$HOME/.local/bin" # This is where mise binary is installed
 
