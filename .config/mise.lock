@@ -66,27 +66,27 @@ url = "https://github.com/google/yamlfmt/releases/download/v0.21.0/yamlfmt_0.21.
 url_api = "https://api.github.com/repos/google/yamlfmt/releases/assets/336650209"
 
 [[tools."aqua:jdx/hk"]]
-version = "2.9.0"
+version = "2.12.0"
 backend = "aqua:jdx/hk"
-specifiers = ["2.9.0"]
+specifiers = ["2.12.0"]
 
 [tools."aqua:jdx/hk"."platforms.linux-arm64"]
-checksum = "sha256:1ed0259505fab94bc4f90b42f36e38b61b316c20f2f6f7589d0b090cc42068d3"
+checksum = "sha256:0f4e44802c3fcf98461b6608281353ae1944b82fd12f4a683f8e2e6683e562f3"
 checksum_source = "mise-versions"
-url = "https://github.com/jdx/hk/releases/download/v2.9.0/hk-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/jdx/hk/releases/assets/679482745"
+url = "https://github.com/jdx/hk/releases/download/v2.12.0/hk-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/jdx/hk/releases/assets/728911209"
 
 [tools."aqua:jdx/hk"."platforms.linux-x64"]
-checksum = "sha256:db1021a8920b71c161e26bef246c5b00a3ea6aa480b6cb837ee098ffeb8c41a1"
+checksum = "sha256:db98f893b882f064c1f7abcc96f4ccc31e8154fd1ba0f7f94823d371c2c4fdad"
 checksum_source = "mise-versions"
-url = "https://github.com/jdx/hk/releases/download/v2.9.0/hk-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/jdx/hk/releases/assets/679482780"
+url = "https://github.com/jdx/hk/releases/download/v2.12.0/hk-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/jdx/hk/releases/assets/728911276"
 
 [tools."aqua:jdx/hk"."platforms.macos-arm64"]
-checksum = "sha256:c7c4d85fd44e88d54b2bf8f9fc38165e278983f54210c095a3e3e8c593e4b720"
+checksum = "sha256:269c17d47e884c19adb77144d5957e854fc5fc6a1a6f9c1a0a5b19431e2fabb8"
 checksum_source = "mise-versions"
-url = "https://github.com/jdx/hk/releases/download/v2.9.0/hk-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/jdx/hk/releases/assets/679482743"
+url = "https://github.com/jdx/hk/releases/download/v2.12.0/hk-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/jdx/hk/releases/assets/728911206"
 
 [[tools."aqua:jdx/pitchfork"]]
 version = "2.29.0"
